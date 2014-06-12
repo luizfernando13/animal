@@ -1,0 +1,7 @@
+django==1.6.2
+dj-database-url==0.3.0
+Unipath==1.0
+gunicorn==18.0
+django-admin-honeypot==0.3.0
+django-nose==1.2
+Pillow

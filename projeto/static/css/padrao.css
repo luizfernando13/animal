@@ -1,0 +1,79 @@
+body
+{
+	overflow-y:scroll;
+}
+
+
+#title
+{
+	text-align: center;
+	color: black;
+	
+	font-size: 30px;
+	width: 200px;
+	height: 60px;
+	position: fixed;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	margin: auto;
+	z-index: 100;
+	margin-top: 20px;
+}
+.title-menu
+{
+	height: 90px;
+}
+.font-menu
+{
+	font-size: 20px;
+
+	text-transform:capitalize;
+	
+}
+.font-menu:hover
+{
+	text-decoration: blink;
+}
+.container
+{
+	width: 100%;
+}
+
+#title-pagina
+{
+	margin: 0 auto;
+	padding: 2em;
+	background: rgba(0,0,0,0.05);
+
+	text-align: center;
+	padding-top:50px;
+	height: 90px;
+	margin-bottom: 50px;
+
+	width:100%;
+}
+#title-pagina2
+{
+	margin: 0 auto;
+	padding: 2em;
+	background: rgba(0,0,0,0.09);
+
+	
+	padding-top:50px;
+	height: 90px;
+	margin-bottom: 50px;
+}
+#content-pagina
+{
+	top: 0; bottom: 0;
+	left: 0px; right: 0;
+	margin: auto;
+	margin-top: 50px;
+	text-align: left;
+}
+input[type="email"],
+input[type="number"],
+input[type="text"]
+{
+	height: 30px;
+}
