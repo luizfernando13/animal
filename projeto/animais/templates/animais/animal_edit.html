@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/escola_form.css" />
+
+    <div class="bs-callout bs-callout-info">
+        <h4>Detalhes da Escola</h4>
+    </div>
+    <div id="content-pagina">
+        {{ form.non_field_errors }}
+        <form class="form-inline" method="POST" >
+            {% csrf_token %}        
+            <p><label>{{form.name.label}}</label>               {{form.name}}</p>               {{form.name.errors}}
+                <p><label>{{form.especie.label}}</label>                {{form.especie}}</p>                {{form.especie.errors}}
+                <p><label>{{form.raca.label}}</label>               {{form.raca}}</p>               {{form.raca.errors}}
+                <p><label>{{form.sexo.label}}</label>               {{form.sexo}}</p>               {{form.sexo.errors}}
+            <p><button type="submit" class="btn btn-success">Salvar</button></p>
+        </form> 
+    </div>
+{%endblock%}

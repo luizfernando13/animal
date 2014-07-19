@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block content%}
+
+	<div class="bs-callout bs-callout-info">
+    	<h4>Animal</h4>
+  	</div>
+
+	<div id="content-pagina">
+
+		<p>Nome : {{animal.name}}</p>
+		<p>Sexo : {{animal.get_sexo_display}}</p>
+		<p>Especie : {{animal.especie}}</p>
+		<p>Raca : {{animal.raca}}</p>
+	</div>
+{%endblock%}

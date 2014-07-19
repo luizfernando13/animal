@@ -122,6 +122,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',    
     'projeto.acessos',
+    'projeto.mercados',
+    'projeto.animais',
 )
 LOGIN_URL = "/login/"
 LOGOUT_URL = "/logout"

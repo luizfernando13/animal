@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{%block content%}
+
+    <div class="bs-callout bs-callout-info">
+        <h4>Listagem de Escolas</h4>
+    </div>
+
+<div id="content-pagina">
+    <div class="panel-body">
+          <div class="adv-table">
+              <table class="table table-bordered table-striped" id="hidden-table-info">
+                  <thead>
+                    <tr>
+                      <th>Visualizar</th>
+                      <th>Nome</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+		            {% for escola in escolas%}
+		                  <tr>
+		                    <td class="td-edit"><a href="{{escola.detail}}">Visualizar</a></td>
+		                    <td>{{escola.name}}</td>
+		                  </tr>
+		            {%endfor%}
+                  
+                  </tbody>
+              </table>
+
+          </div>
+    </div>
+      
+
+  <script src="{{ STATIC_URL }}js/jquery.dataTables.js" type="text/javascript" ></script>
+  <script src="{{ STATIC_URL }}js/DT_bootstrap.js" type="text/javascript" ></script>
+
+        <script type="text/javascript">
+          /* Formating function for row details */
+
+          $(document).ready(function() {
+              var oTable = $('#hidden-table-info').dataTable( {
+                  "aoColumnDefs": [
+                      { "bSortable": false, "aTargets": [ 1 ] }
+                  ],
+                  "aaSorting": [[1, 'asc']]
+              });
+
+          } );
+      </script>
+</div>
+
+
+
+
+
+
+
+{%endblock%}
