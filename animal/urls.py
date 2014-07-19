@@ -9,7 +9,6 @@ urlpatterns = patterns('',
         url(r'^logout/','django.contrib.auth.views.logout_then_login',{'login_url': '/'}),
         url(r'^compra_venda/', include('animal.mercados.urls',namespace='mercados')),
         url(r'^animalandros/', include('animal.animais.urls',namespace='animais')),
-        
         url(r'^acesso/', include('animal.acessos.urls',namespace='acessos')),        
         url(r'^admin/', include('admin_honeypot.urls')),
         url(r'^secret/', include(admin.site.urls)),

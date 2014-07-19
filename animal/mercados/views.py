@@ -6,9 +6,13 @@ from animal.mercados.forms import AnuncioForm
 from animal.mercados.models import Anuncio
 #comment
 
+
+def compra_venda(request):
+    anuncios = Anuncio.objects.all().order_by('-created_at')
+    return render(request,'mercados/compra_venda.html',{'anuncios':anuncios})   
 def anuncios(request):
     anuncios = Anuncio.objects.all()
-    return render(request,'academicos/anuncios.html',{'anuncios':anuncios})
+    return render(request,'mercados/anuncios.html',{'anuncios':anuncios})
 
 
 def anuncio_edit(request,id): 
@@ -32,21 +36,21 @@ def edit_anuncio(request,anuncio):
         anuncio.save()
         return HttpResponseRedirect(anuncio.detail())
     else:
-        return render(request,'academicos/anuncio_edit.html',{'form':form})
+        return render(request,'mercados/anuncio_edit.html',{'form':form})
 
 def request_anuncio(request,anuncio):
     '''
         @request_anuncio: View para obter os dados de um determinado anuncio
     '''    
     form = AnuncioForm(instance=anuncio)
-    return render(request, 'academicos/anuncio_edit.html', {'form': form,'anuncio':anuncio})
+    return render(request, 'mercados/anuncio_edit.html', {'form': form,'anuncio':anuncio})
 
 def anuncio_detail(request,id):
     '''
         @anuncio_detail: View para exibir os detalhes de um determinado anuncio
     '''
     anuncio = get_object_or_404(Anuncio,id=id)
-    return render(request,'academicos/anuncio_detail.html',
+    return render(request,'mercados/anuncio_detail.html',
         {'anuncio':anuncio}
         )
 

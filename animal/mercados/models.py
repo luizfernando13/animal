@@ -12,7 +12,7 @@ class Anuncio(models.Model):
     name = models.CharField(max_length=80,verbose_name='Descrição')
     created_at = models.DateTimeField(auto_now_add = True)
     animal = models.ForeignKey('animais.Animal',verbose_name='Animalandro')
-    owner = models.ForeignKey(User,related_name='anuncios')
+    #user = models.ForeignKey(User,related_name='anuncios')
 
     @models.permalink
     def detail(self):

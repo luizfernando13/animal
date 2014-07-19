@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+{%block content%}
+<div class="container">
+      <div class="row">
+   <div class="col-md-3">
+    <h2><a class="btn btn-primary" href="{% url 'mercados:anuncio_create' %}" role="button">Novo Anúncio »</a></h2>
+   </div>       
+      </div>
+      </div>
+
+    <div class="container">
+<div class="alert alert-info text-center">Todos os Anúncios</div>
+
+      <div class="row">
+    {%for a in anuncios%}
+   <div class="col-md-3">
+          <h2>{{a.name|truncatechars:12}}</h2>
+          <h5>{{a.created_at}}</h5>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-success" href="{{a.detail}}" role="button">Clique Aqui »</a></p>
+        </div>
+    {%endfor%}  
+</div>
+<hr>
+      <footer>
+        <p>© Company 2014</p>
+      </footer>
+      {%endblock%}
