@@ -1,15 +1,30 @@
 {% extends 'base.html' %}
 {%block content%}
 
-	<div class="bs-callout bs-callout-info">
-    	<h4>Animal</h4>
-  	</div>
 
-	<div id="content-pagina">
+       <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	<div class="col-md-6 text-center ">
+          <h2>Nome : {{animal.name}}</h2>
+          <h4>Sexo : {{animal.get_sexo_display}}</h4>
+			<h4>Especie : {{animal.especie}}</h4>
+			<h4>Raca : {{animal.raca}}</h4>
+        </div>
+    
+      <div class="col-md-6 text-center">
+      	<br/>
+          <div class="list-group">
+      <a href="{% url 'mercados:anuncio_create' %}" class="list-group-item list-group-item-success">
+        <h4 class="list-group-item-heading ">Vender</h4>
+        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      </a>
+      <a href="#" class="list-group-item list-group-item-info">
+        <h4 class="list-group-item-heading">Doar</h4>
+        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+      </a>
 
-		<p>Nome : {{animal.name}}</p>
-		<p>Sexo : {{animal.get_sexo_display}}</p>
-		<p>Especie : {{animal.especie}}</p>
-		<p>Raca : {{animal.raca}}</p>
-	</div>
+    </div>
+        </div>
+    </div>
 {%endblock%}

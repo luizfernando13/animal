@@ -1,17 +1,49 @@
 {% extends 'base.html' %}
 {%block content%}
 
-	<div class="bs-callout bs-callout-info">
-    	<h4>Escola</h4>
-  	</div>
+ <div class="container">
+      <div class="row">
 
-	<div id="content-pagina">
+        <div class="col-md-6">
+          <h2>Titulo : {{anuncio.name}}</h2>
+          <h5>Anunciado em {{anuncio.created_at}}</h5>
+          <h2><span class="label label-danger">Interessados : 40</span></h2>
+      </br></br></br></br></br>
 
-		<p>Nome : {{escola.name}}</p>
-		<p>Distrito : {{escola.get_distrito_display}}</p>
-		<p>Bairro : {{escola.bairro}}</p>
-		<p>Endereço : {{escola.endereco}}</p>
-		<p>Telefone Fixo : {{escola.telefone_fixo}}</p>
-		<p>Telefone Celular : {{escola.telefone_celular}}</p>
-	</div>
+		<p><button type="submit" class="btn btn-warning btn-block">Estou Interessado !</button></p>
+        </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+        	<div class="jumbotron">
+        <h1>Ajude-nos</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        
+
+<!-- if user == anuncio.user-->
+<form class="text-center"action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+</div>
+</div>
+</div>
+
+      <div class="row">
+    {%for a in anuncios%}
+   <div class="col-md-3">
+          <h2>{{a.name|truncatechars:12}}</h2>
+          <p>
+          	foto
+          </p>
+          
+          <p><a class="btn btn-block btn-success" href="{{a.detail}}" role="button">Visualizar Anúncio</a></p>
+        </div>
+    {%endfor%}  
+</div>
 {%endblock%}

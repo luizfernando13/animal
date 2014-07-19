@@ -5,14 +5,11 @@ from django.http import HttpResponseRedirect
 from animal.mercados.forms import AnuncioForm
 from animal.mercados.models import Anuncio
 #comment
+import random
 
-
-def compra_venda(request):
+def anuncios(request):
     anuncios = Anuncio.objects.all().order_by('-created_at')
     return render(request,'mercados/compra_venda.html',{'anuncios':anuncios})   
-def anuncios(request):
-    anuncios = Anuncio.objects.all()
-    return render(request,'mercados/anuncios.html',{'anuncios':anuncios})
 
 
 def anuncio_edit(request,id): 
@@ -46,12 +43,13 @@ def request_anuncio(request,anuncio):
     return render(request, 'mercados/anuncio_edit.html', {'form': form,'anuncio':anuncio})
 
 def anuncio_detail(request,id):
-    '''
-        @anuncio_detail: View para exibir os detalhes de um determinado anuncio
-    '''
+    
     anuncio = get_object_or_404(Anuncio,id=id)
+    anuncios = Anuncio.objects.filter(animal__raca__raca=anuncio.animal.raca.raca).exclude(id=anuncio.id).order_by('-created_at')
+    anuncios = anuncios[:30]
+    anuncios = sorted(anuncios, key=lambda x: random.random())
     return render(request,'mercados/anuncio_detail.html',
-        {'anuncio':anuncio}
+        {'anuncio':anuncio,'anuncios':anuncios[:4]}
         )
 
 def anuncio_create(request):
