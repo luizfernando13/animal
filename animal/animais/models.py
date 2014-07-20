@@ -24,6 +24,7 @@ class Animal(models.Model):
     sexo = models.CharField(max_length=1,choices=SEXO,default='M')
     created_at = models.DateTimeField(auto_now_add = True)
     #user = models.ForeignKey(User,related_name='animais')
+    
 
     def __str__(self):
         return self.name

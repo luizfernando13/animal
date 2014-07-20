@@ -10,8 +10,8 @@ import random
 def anuncios(request):
     anuncios = Anuncio.objects.all().order_by('-created_at')
     return render(request,'mercados/compra_venda.html',{'anuncios':anuncios})   
-
-
+def estados_ongs(request):
+    return render(request,'mercados/estados_ongs.html',)   
 def anuncio_edit(request,id): 
     '''
         @anuncio_edit: View para determinar se é um GET ou POST para editar um anuncio
