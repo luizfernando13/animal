@@ -13,7 +13,9 @@ class Anuncio(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     animal = models.ForeignKey('animais.Animal',verbose_name='Animalandro')
     #user = models.ForeignKey(User,related_name='anuncios')
-    interessados = models.ManyToManyField(User,related_name='anuncios')
+
+
+
 
     @models.permalink
     def detail(self):
