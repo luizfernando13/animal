@@ -1,35 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
 
-<div id="conteudo_central">
-    <div class="alert alert-info" align="center">
-        <h4>Faça Seu Login</h4>
-    </div>
-    <ul class="breadcrumb">
-        <li><a href="/">Inicio</a> <span class="divider">/</span></li>
-        <li class="active">Login</li>
-    </ul>
-
-{% if form.errors %}
- <div class="alert alert-danger" align="center">
-        <h4>Senha incorreta !</h4>
-    </div>
-{% endif %}
     <form class="form-horizontal" method="post" action"" enctype="multipart/form-data">    
         {%csrf_token%}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                
+                    <label class="control-label">Usuário</label>
+                <div class="controls login">{{form.username}}</div>
 
-        <div class="control-group offset3">
-            <label class="control-label">Usuário</label>
-            <div class="controls login">{{form.username}}</div>
-        </div>
-        <div class="control-group offset3">
-            <label class="control-label" >{{form.password.label_tag}}</label>
-            <div class="controls login">{{form.password}}</div>
-        </div>
-        <div class="form-actions">
+                    <label class="control-label" >{{form.password.label_tag}}</label>
+               <div class="controls login">{{form.password}}</div>
+                       <div class="form-actions">
+                       </br>
+            <a class="btn btn-info" href="/login" role="button">Registrar</a>
             <button class="btn btn-success offset3" type="submit">Login</button>
+
+        </br>
+{% if form.errors %}
+ <h3><span class="label label-danger">Senha Inválida</span></h3>
+{% endif %}
         </div>
-    </form>
-</div>
+            </div>    
+        </div>      
 {% endblock %}

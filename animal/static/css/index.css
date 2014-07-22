@@ -45,9 +45,6 @@
 #map .model-green .state:hover .icon_state, #map .model-green .state.hover .icon_state {
     fill: #F58002;
 }
-
-
-
 #index_pg.default #ct .map_section {
     display: block;
     float: left;

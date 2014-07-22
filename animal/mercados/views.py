@@ -63,6 +63,7 @@ def new_anuncio(request):
         {'form': AnuncioForm()})
 
 def create_anuncio(request):
+
     form = AnuncioForm(request.POST)
     if not form.is_valid():
         return render(request, 'mercados/anuncio_form.html',

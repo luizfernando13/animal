@@ -27,6 +27,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    {% block head %}
+    {%endblock%}
   </head>
 
   <body>
@@ -43,14 +45,11 @@
           <a class="navbar-brand" href="{%url 'home'%}">AniMalandro</a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+          <form class="navbar-form navbar-right" role="form" action="/login">
+            {% if user%}
+            <a class="btn btn-success" href="/login" role="button">Login</a>
+            <a class="btn btn-info" href="/login" role="button">Registrar</a>
+            {%endif%}
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -67,34 +66,34 @@
         <div class="col-md-4">
           <h2>Comprar / Vender</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-success" href="{%url 'mercados:anuncios' %}" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-success btn-block" href="{%url 'mercados:anuncios' %}" role="button">Clique Aqui »</a></p>
         </div>
 
         <div class="col-md-4">
           <h2>Adotar / Doar</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-info" href="#" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-info btn-block" href="#" role="button">Clique Aqui »</a></p>
        </div>
         <div class="col-md-4">
           <h2>Achados / Perdidos</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-warning" href="#" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-warning btn-block" href="#" role="button">Clique Aqui »</a></p>
         </div>
  		<hr>
         <div class="col-md-4">
           <h2>Parceiros</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-primary" href="#" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-primary btn-block" href="#" role="button">Clique Aqui »</a></p>
         </div>
         <div class="col-md-4">
           <h2>Ajudar</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-danger" href="#" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-danger btn-block" href="#" role="button">Clique Aqui »</a></p>
         </div>
         <div class="col-md-4">
           <h2>Ong's</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">Clique Aqui »</a></p>
+          <p><a class="btn btn-default btn-block" href="#" role="button">Clique Aqui »</a></p>
         </div>
       </div>
       {%endblock%}
@@ -108,7 +107,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ STATIC_URL }}jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
   
 
