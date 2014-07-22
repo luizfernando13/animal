@@ -8,7 +8,7 @@ from animal.mercados.models import Anuncio
 import random
 
 def anuncios(request):
-    anuncios = Anuncio.objects.all().order_by('-created_at')
+    anuncios = Anuncio.objects.all().select_related().order_by('-created_at')
     return render(request,'mercados/compra_venda.html',{'anuncios':anuncios})   
 def estados_ongs(request):
     return render(request,'mercados/estados_ongs.html',)   

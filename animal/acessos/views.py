@@ -7,8 +7,6 @@ from animal.acessos.forms import GrupoForm
 
 from django.core.urlresolvers import reverse as r
 # Create your views here.
-
-
 def acesso(request):
 	'''
 		@acesso: View para vizualizar todos os grupos e permissoes
